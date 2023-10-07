@@ -14,6 +14,7 @@ let dataUsage= parseFloat(readlineSync.question("Enter data usage (Mb): "));
 let extraData= dataUsage - 200;
 let bottomRate = 20;
 let topRate = 118;
+
 //process
 let totalCharge = 0;
 if (dataUsage < 200){totalCharge = bottomRate;}
