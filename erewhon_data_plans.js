@@ -12,11 +12,16 @@ function main()
 //input
 let dataUsage= parseFloat(readlineSync.question("Enter data usage (Mb): "));
 let extraData= dataUsage - 200;
-let flatRate = 20;
+let bottomRate = 20;
+let topRate = 118;
 //process
 let totalCharge = 0;
-if (dataUsage < 200){totalCharge = flatRate;}
-else if ((dataUsage > 200) && (dataUsage< 500)){totalCharge = flatRate + () }
+if (dataUsage < 200){totalCharge = bottomRate;}
+else if ((dataUsage > 200) && (dataUsage< 500)){totalCharge = bottomRate + (extraData * 0.105); 
+}
+else if ((dataUsage > 500)&&(dataUsage<1000)){totalCharge = bottomRate + (extraData * 0.110);
+}
+else if (dataUsage > 1000){totalCharge = topRate};
 }   
 
 // DO NOT EDIT: Trigger our main function to launch the program
