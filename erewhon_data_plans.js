@@ -22,6 +22,9 @@ else if ((dataUsage > 200) && (dataUsage< 500)){totalCharge = bottomRate + (extr
 else if ((dataUsage > 500)&&(dataUsage<1000)){totalCharge = bottomRate + (extraData * 0.110);
 }
 else if (dataUsage > 1000){totalCharge = topRate};
+
+//output
+console.log(`Total charge is $${totalCharge}`);
 }   
 
 // DO NOT EDIT: Trigger our main function to launch the program
