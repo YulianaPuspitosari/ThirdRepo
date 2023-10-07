@@ -12,24 +12,26 @@ let readlineSync = require('readline-sync');
 function main()
 {
 //input
-let gender= readlineSync.question("Are you 'Male' or 'Female': ");
+let gender= readlineSync.question("Are you 'Male' or 'Female': ").toLowerCase();
 let age= parseFloat(readlineSync.question("Enter your age: "));
 let vehiclePrice= parseFloat(readlineSync.question("Enter the purchase of the vehicle: "));
 
 //process
 let monthlyInsurance = 0;
-if ((gender == "Male") &&(age > 15) && (age < 25)){monthlyInsurance = (vehiclePrice * 0.25) / 12;
+if ((gender == "Male")&&(age > 15)&& (age < 25)){monthlyInsurance = (vehiclePrice * 0.25) / 12;
 }
-else if ((gender == "Male") &&(age > 25) && (age < 40)){monthlyInsurance = (vehiclePrice * 0.17) / 12;}
+else if ((gender == "Male")&&(age > 25) && (age < 40)){monthlyInsurance = (vehiclePrice * 0.17) / 12;}
 else if ((gender == "Male") &&(age > 40) && (age < 70)){monthlyInsurance = (vehiclePrice * 0.10) / 12;
-}
-else if ((gender == "Female") &&(age > 15) && (age < 25)){monthlyInsurance = (vehiclePrice * 0.20) / 12;
+};
+
+if ((gender == "Female") &&(age > 15) && (age < 25)){monthlyInsurance = (vehiclePrice * 0.20) / 12;
 }
 else if ((gender == "Female") &&(age > 25) && (age < 40)){monthlyInsurance = (vehiclePrice * 0.15) / 12;}
 else if ((gender == "Female") &&(age > 40) && (age < 70)){monthlyInsurance = (vehiclePrice * 0.10) / 12;
 }
 
-
+//output
+console.log(`Your monthly insurance will be $${monthlyInsurance}`);
 
 
 
