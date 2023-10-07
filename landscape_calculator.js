@@ -19,8 +19,8 @@ function main()
 {
     // input
     let houseNumber= readlineSync.question("Enter House Number: ");
-    let propertyDepth= readlineSync.question("Enter property depth (feet): ");
-    let propertyWidth= readlineSync.question("Enter property width (feet): ");
+    let propertyDepth= parseFloat(readlineSync.question("Enter property depth (feet): "));
+    let propertyWidth= parseFloat(readlineSync.question("Enter property width (feet): "));
     let typeGrass= readlineSync.question("Enter type of grass (fescue, bentgrass, campus): ").toLowerCase();
     let numberTrees= readlineSync.question("Enter the number of trees: ");
     let baseLabour= 1000;
@@ -29,22 +29,23 @@ function main()
     
     let surface = propertyDepth * propertyWidth;
     let totalLabour = 1000;
-    if (surface > 5000){baseLabour + 500;
+    if (surface > 5000){totalLabour= baseLabour + 500;
     }
-    else if (surface < 5000) {baseLabour + 0;
+    else if (surface < 5000) {totalLabour= baseLabour + 0;
     };
+
     let totalGrass = 0;
-    if (typeGrass = "fescue"){totalGrass = surface * 0.05;
+    if (typeGrass == "fescue"){totalGrass = surface * 0.05;
     }
-    else if (typeGrass= "bentgrass"){totalGrass= surface * 0.02;
+    else if (typeGrass==          "bentgrass"){totalGrass= surface * 0.02;
     }
-    else if (typeGrass = "campus"){totalGrass = typeGrass * 0.01;};
+    else if (typeGrass == "campus"){totalGrass = surface * 0.01;};
 
     let costTree = numberTrees * 100;
     let totalCost = totalLabour + totalGrass + costTree;
 
     //output
-    console.log(`Total cost for house ${houseNumber} is: ${totalCost} `);
+    console.log(`Total cost for house ${houseNumber} is: $${totalCost}`);
 
 }   
 
