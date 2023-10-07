@@ -23,7 +23,27 @@ function main()
     let propertyWidth= readlineSync.question("Enter property width (feet): ");
     let typeGrass= readlineSync.question("Enter type of grass (fescue, bentgrass, campus): ");
     let numberTrees= readlineSync.question("Enter the number of trees: ");
-}
+    let baseLabour= 1000;
+
+    //process
+    
+    let surface = propertyDepth * propertyWidth;
+    if (surface > 5000){baseLabour + 500;
+    }
+    else if (surface < 5000) {baseLabour + 0;
+    };
+    if (typeGrass = fescue){surface * 0.05;
+    }
+    else if (typeGrass= bentgrass){surface * 0.02;
+    }
+    else if (typeGrass = campus){typeGrass * 0.01;};
+
+    let costTree = numberTrees * 100;
+
+    //output
+    console.log(`Total cost for house ${houseNumber} is: ${costTree} + ${} `)
+
+}   
 
 // DO NOT EDIT: Trigger our main function to launch the program
 if (require.main === module)
