@@ -18,7 +18,11 @@ let readlineSync = require('readline-sync');
 function main()
 {
     // input
-    let houseNumber= readlineSync.question("Enter House Number: ")
+    let houseNumber= readlineSync.question("Enter House Number: ");
+    let propertyDepth= readlineSync.question("Enter property depth (feet): ");
+    let propertyWidth= readlineSync.question("Enter property width (feet): ");
+    let typeGrass= readlineSync.question("Enter type of grass (fescue, bentgrass, campus): ");
+    let numberTrees= readlineSync.question("Enter the number of trees: ");
 }
 
 // DO NOT EDIT: Trigger our main function to launch the program
